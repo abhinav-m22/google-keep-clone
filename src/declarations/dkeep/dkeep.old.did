@@ -1,3 +1,10 @@
+type Note = 
+ record {
+   content: text;
+   title: text;
+ };
 service : {
-  greet: (text) -> (text);
+  createNote: (text, text) -> () oneway;
+  readNotes: () -> (vec Note) query;
+  removeNote: (nat) -> () oneway;
 }
